@@ -4,6 +4,7 @@
   "description": "API-NODEJS",
   "main": "index.js",
   "scripts": {
+    "test": "test",
     "dev": "ts-node-dev --poll --inspect --respawn --transpile-only --ignore-watch node_modules src/server.ts",
     "typeorm": "ts-node-dev  -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
     "migration:run": "ts-node-dev ./node_modules/typeorm/cli.js -d src/database/data-source.ts migration:run"
