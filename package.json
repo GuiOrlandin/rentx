@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "ts-node-dev --poll --inspect --respawn --transpile-only --ignore-watch node_modules src/server.ts",
-    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js -d src/database/data-source.ts",
+    "typeorm": "ts-node-dev  -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
     "migration:run": "ts-node-dev ./node_modules/typeorm/cli.js -d src/database/data-source.ts migration:run"
   },
   "devDependencies": {
@@ -34,7 +34,8 @@
     "reflect-metadata": "^0.1.13",
     "swagger-ui": "^4.16.1",
     "swagger-ui-express": "^4.6.2",
-    "typeorm": "^0.3.12",
+    "tsyringe": "^4.7.0",
+    "typeorm": "^0.2.45",
     "uuid": "^9.0.0"
   }
 }
