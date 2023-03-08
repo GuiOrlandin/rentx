@@ -7,7 +7,7 @@ interface Irequest {
 }
 
 @injectable()
-export default class CreateCategoryUseCase {
+export class CreateCategoryUseCase {
   constructor(
     @inject("CategoriesRespository")
     private categoriesRepository: ICategoriesRepository
