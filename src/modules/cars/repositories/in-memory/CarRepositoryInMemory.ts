@@ -40,17 +40,17 @@ export class CarsRepositoryInMemory implements ICarsRepository {
     category_id?: string,
     name?: string
   ): Promise<Car[]> {
-    const all = this.cars.filter((car) => {
+    const availableCars = this.cars.filter(({ available }) => available);
+    const queryCars = availableCars.filter((car) => {
       if (
-        car.available === true &&
-        ((brand && car.brand === brand) ||
-          (category_id && car.category_id === category_id) ||
-          (name && car.name === name))
+        (brand && car.brand === brand) ||
+        (category_id && car.category_id === category_id) ||
+        (name && car.name === name)
       ) {
         return car;
       }
     });
 
-    return all;
+    return queryCars.length ? queryCars : availableCars;
   }
 }
