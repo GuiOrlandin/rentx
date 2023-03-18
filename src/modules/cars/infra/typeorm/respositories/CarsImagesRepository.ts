@@ -1,6 +1,5 @@
 import { ICarsImagesRepository } from "@modules/cars/repositories/ICarsImagesRepository";
 import { getRepository, Repository } from "typeorm";
-import { v4 as uuidV4 } from "uuid";
 
 import { CarsImages } from "../entities/CarsImages";
 
@@ -16,8 +15,6 @@ export class CarsImageRespository implements ICarsImagesRepository {
       car_id,
       image_name,
     });
-
-    console.log(carImage);
 
     await this.respository.save(carImage);
 
