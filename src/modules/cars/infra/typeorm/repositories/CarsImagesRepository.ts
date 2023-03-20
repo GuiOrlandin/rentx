@@ -3,20 +3,20 @@ import { getRepository, Repository } from "typeorm";
 
 import { CarsImages } from "../entities/CarsImages";
 
-export class CarsImageRespository implements ICarsImagesRepository {
-  private respository: Repository<CarsImages>;
+export class CarsImageRepository implements ICarsImagesRepository {
+  private repository: Repository<CarsImages>;
 
   constructor() {
-    this.respository = getRepository(CarsImages);
+    this.repository = getRepository(CarsImages);
   }
 
   async create(car_id: string, image_name: string): Promise<CarsImages> {
-    const carImage = this.respository.create({
+    const carImage = this.repository.create({
       car_id,
       image_name,
     });
 
-    await this.respository.save(carImage);
+    await this.repository.save(carImage);
 
     return carImage;
   }

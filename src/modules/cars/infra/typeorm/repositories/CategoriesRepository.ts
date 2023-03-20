@@ -5,7 +5,7 @@ import {
 } from "../../../repositories/ICategoriesRepository";
 import { Category } from "../entities/Category";
 
-export class CategoriesRespository implements ICategoriesRepository {
+export class CategoriesRepository implements ICategoriesRepository {
   private repository: Repository<Category>;
 
   constructor() {

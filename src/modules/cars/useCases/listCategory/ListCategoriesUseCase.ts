@@ -5,7 +5,7 @@ import { inject, injectable } from "tsyringe";
 @injectable()
 export class ListCategoriesUseCase {
   constructor(
-    @inject("CategoriesRespository")
+    @inject("CategoriesRepository")
     private categoriesRepository: ICategoriesRepository
   ) {}
 

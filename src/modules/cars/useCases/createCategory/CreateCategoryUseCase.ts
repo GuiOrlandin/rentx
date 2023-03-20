@@ -10,7 +10,7 @@ interface Irequest {
 @injectable()
 export class CreateCategoryUseCase {
   constructor(
-    @inject("CategoriesRespository")
+    @inject("CategoriesRepository")
     private categoriesRepository: ICategoriesRepository
   ) {}
   async execute({ name, description }: Irequest): Promise<void> {

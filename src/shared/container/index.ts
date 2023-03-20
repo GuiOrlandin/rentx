@@ -1,19 +1,23 @@
 import { container } from "tsyringe";
 
-import { CategoriesRespository } from "@modules/cars/infra/typeorm/respositories/CategoriesRepository";
+import "@shared/container/providers";
+
+import { CategoriesRepository } from "@modules/cars/infra/typeorm/repositories/CategoriesRepository";
 import { ICategoriesRepository } from "@modules/cars/repositories/ICategoriesRepository";
-import { SpecificationsRepository } from "@modules/cars/infra/typeorm/respositories/SpecificationsRepository";
+import { SpecificationsRepository } from "@modules/cars/infra/typeorm/repositories/SpecificationsRepository";
 import { ISpecificationRepository } from "@modules/cars/repositories/ISpecificationsRespository";
 import { UsersRepository } from "@modules/accounts/infra/typeorm/respositories/UsersRepository";
 import { IUsersRepository } from "@modules/accounts/repositories/IUsersRepository";
 import { ICarsRepository } from "@modules/cars/repositories/ICarsRepository";
-import { CarsRepository } from "@modules/cars/infra/typeorm/respositories/CarsRepository";
+import { CarsRepository } from "@modules/cars/infra/typeorm/repositories/CarsRepository";
 import { ICarsImagesRepository } from "@modules/cars/repositories/ICarsImagesRepository";
-import { CarsImageRespository } from "@modules/cars/infra/typeorm/respositories/CarsImagesRepository";
+import { CarsImageRepository } from "@modules/cars/infra/typeorm/repositories/CarsImagesRepository";
+import { RentalsRepository } from "@modules/rentals/infra/typeorm/repositories/RentalsRepositotory";
+import { IRentalsRepository } from "@modules/rentals/repositories/IRentalsRepository";
 
 container.registerSingleton<ICategoriesRepository>(
-  "CategoriesRespository",
-  CategoriesRespository
+  "CategoriesRepository",
+  CategoriesRepository
 );
 
 container.registerSingleton<ISpecificationRepository>(
@@ -30,5 +34,10 @@ container.registerSingleton<ICarsRepository>("CarsRepository", CarsRepository);
 
 container.registerSingleton<ICarsImagesRepository>(
   "CarsImagesRepository",
-  CarsImageRespository
+  CarsImageRepository
+);
+
+container.registerSingleton<IRentalsRepository>(
+  "RentalsRepository",
+  RentalsRepository
 );

@@ -12,7 +12,7 @@ interface IImportCategory {
 @injectable()
 export class ImportCategoryUseCase {
   constructor(
-    @inject("CategoriesRespository")
+    @inject("CategoriesRepository")
     private categoriesRepository: ICategoriesRepository
   ) {}
   loadCategories(file: Express.Multer.File): Promise<IImportCategory[]> {
