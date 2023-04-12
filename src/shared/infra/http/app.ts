@@ -1,5 +1,6 @@
 import express, { NextFunction, Request, Response } from "express";
 import "express-async-errors";
+import "dotenv/config";
 import swaggerUI from "swagger-ui-express";
 
 import createConnection from "@shared/infra/typeorm";
@@ -34,4 +35,3 @@ app.use(
     });
   }
 );
-
