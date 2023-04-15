@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "module": "CommonJS",
+    "target": "esnext",
     "outDir": "./dist",
     "rootDir": "./src",
     "resolveJsonModule": true,
