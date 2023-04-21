@@ -37,6 +37,8 @@
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.310.0",
+    "@sentry/node": "^7.49.0",
+    "@sentry/tracing": "^7.49.0",
     "@types/redis": "4.0.9",
     "aws-sdk": "^2.1354.0",
     "bcryptjs": "^2.4.3",
