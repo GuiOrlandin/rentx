@@ -3,6 +3,7 @@ import "express-async-errors";
 import "dotenv/config";
 import cors from "cors";
 import swaggerUI from "swagger-ui-express";
+import rateLimiter from "./middlewares/rateLimiter";
 
 import createConnection from "@shared/infra/typeorm";
 
@@ -16,6 +17,8 @@ import upload from "@config/upload";
 
 createConnection();
 export const app = express();
+
+app.use(rateLimiter);
 
 app.use(express.json());
 
